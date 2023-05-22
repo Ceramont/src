@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <update_rate>25</update_rate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>wheel1_joint</leftFrontJoint>
+    <leftRearJoint>wheel2_joint</leftRearJoint>
+    <rightFrontJoint>wheel3_joint</rightFrontJoint>
+    <rightRearJoint>wheel4_joint</rightRearJoint>
+    <wheelSeparation>0.6</wheelSeparation>
+    <wheelDiameter>0.6</wheelDiameter>
+    <odometryTopic>/odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>40</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>true</broadcastTF>
+  </plugin>
+  </gazebo>
+
+<gazebo reference="camera_link">
+    <sensor type="camera" name="camera">
+      <update_rate>10</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <update_rate>10</update_rate>
+        <cameraName>robot/camera1</cameraName>
+        <imageTopicName>image_raw_camera</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo> 
+
+<gazebo reference="ultra1_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.0005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_1</topicName>
+         <frameName>ultra1_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.3</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+<gazebo reference="ultra2_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_2</topicName>
+         <frameName>ultra2_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+   <gazebo reference="ultra3_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_3</topicName>
+         <frameName>ultra3_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+
+   <gazebo reference="ultra4_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_4</topicName>
+         <frameName>ultra4_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+   <gazebo reference="ultra5_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_5</topicName>
+         <frameName>ultra5_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+   <gazebo reference="ultra6_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_6</topicName>
+         <frameName>ultra6_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+   <gazebo reference="ultra7_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_7</topicName>
+         <frameName>ultra7_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+   <gazebo reference="ultra8_link">        
+   <sensor type="ray" name="TeraRanger">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+         <range>
+            <min>0.05</min>
+            <max>7</max>
+         </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+         <gaussianNoise>0.005</gaussianNoise>
+         <alwaysOn>true</alwaysOn>
+         <update_rate>20</update_rate>
+         <topicName>sensor/ir_8</topicName>
+         <frameName>ultra8_link</frameName>
+         <radiation>INFRARED</radiation>
+         <fov>0.2967</fov>
+      </plugin>
+   </sensor>  
+   </gazebo>
+
+
+
+</robot>

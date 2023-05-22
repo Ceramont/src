@@ -1,0 +1,849 @@
+<?xml version='1.0'?>
+
+<robot name="rob" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find robot_mod)/urdf/mybot1.gazebo"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00734399310229916 0.0298945739181546 -0.00692860117085678"
+        rpy="0 0 0" />
+      <mass
+        value="0.890847302493005" />
+      <inertia
+        ixx="0.00355415837473713"
+        ixy="-1.13557763177531E-06"
+        ixz="3.6127426763209E-09"
+        iyy="0.00560075948884006"
+        iyz="1.48922271272916E-05"
+        izz="0.0035514656039363" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel1_link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 -0.015 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0848230016469244" />
+      <inertia
+        ixx="2.54469004940773E-05"
+        ixy="2.24993126614424E-21"
+        ixz="-3.18981523715761E-23"
+        iyy="3.8170350741116E-05"
+        iyz="1.7205356741103E-21"
+        izz="2.54469004940773E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel1_joint"
+    type="continuous">
+    <origin
+      xyz="0.058501 0.10796 -0.0044153"
+      rpy="-3.1343 -0.008732 -0.0032875" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel1_link" />
+    <axis
+      xyz="0 -1 0" />
+      <limit effort="100" velocity="100"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <link
+    name="wheel2_link">
+    <inertial>
+      <origin
+        xyz="0 -0.015 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0848230016469244" />
+      <inertia
+        ixx="2.54469004940773E-05"
+        ixy="-6.31965987990513E-21"
+        ixz="5.75924501490046E-23"
+        iyy="3.8170350741116E-05"
+        iyz="1.99846835992811E-21"
+        izz="2.54469004940773E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.074871 0.10839 -0.0046147"
+      rpy="-3.1343 0.063737 -0.0027601" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel2_link" />
+    <axis
+      xyz="0 -1 0" />
+      <limit effort="100" velocity="100"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <link
+    name="wheel3_link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.015 1.30104260698261E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0848230016469244" />
+      <inertia
+        ixx="2.54469004940773E-05"
+        ixy="-6.22039820639877E-22"
+        ixz="-2.22304789623626E-23"
+        iyy="3.8170350741116E-05"
+        iyz="-6.35274710440725E-22"
+        izz="2.54469004940773E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel3_joint"
+    type="continuous">
+    <origin
+      xyz="0.058449 -0.092049 -0.004307"
+      rpy="-3.1343 0.010365 -0.0031487" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel3_link" />
+    <axis
+      xyz="0 -1 0" />
+      <limit effort="100" velocity="100"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <link
+    name="wheel4_link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0.015 8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.0848230016469244" />
+      <inertia
+        ixx="2.54469004940773E-05"
+        ixy="-6.50494833711701E-21"
+        ixz="-3.47467556060556E-22"
+        iyy="3.8170350741116E-05"
+        iyz="-9.26442286059391E-22"
+        izz="2.54469004940773E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/wheel4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.07512 -0.091616 -0.0045836"
+      rpy="-3.1343 0.040789 -0.0029274" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel4_link" />
+    <axis
+      xyz="0 -1 0" />
+      <limit effort="100" velocity="100"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <link
+    name="tarelka_Link">
+    <inertial>
+      <origin
+        xyz="0.00914641388761052 0.0140432662372767 0.00105749638411194"
+        rpy="0 0 0" />
+      <mass
+        value="0.318469004940774" />
+      <inertia
+        ixx="0.000560086866524596"
+        ixy="-2.04089134038771E-21"
+        ixz="-2.65554710073497E-08"
+        iyy="0.0010412661366768"
+        iyz="-8.99527243297693E-21"
+        izz="0.000553687086901216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/tarelka_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/tarelka_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tarelka_joint"
+    type="fixed">
+    <origin
+      xyz="-0.00768294366524355 0.000139438304547836 0.119354771870662"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="tarelka_Link" />
+    <axis
+      xyz="0 0 0" />
+      <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <link
+    name="ultra1_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.00499999999999998 1.30104260698261E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="-1.4617545288883E-39"
+        ixz="-5.99671092224471E-24"
+        iyy="8.33333333333335E-08"
+        iyz="1.21450428426589E-40"
+        izz="3.33333333333335E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra1_joint"
+    type="fixed">
+    <origin
+      xyz="0.0793289692620174 0.00999999999999995 0.00292088535692958"
+      rpy="0 0 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra8_link">
+    <inertial>
+      <origin
+        xyz="0 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="-1.34742306322573E-24"
+        ixz="1.65436122510606E-24"
+        iyy="8.33333333333335E-08"
+        iyz="-1.54607614556705E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra8_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra8_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra8_joint"
+    type="fixed">
+    <origin
+      xyz="0.0557273075572934 0.01 0.0567008918755133"
+      rpy="0 -0.794124809657419 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra8_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra7_link">
+    <inertial>
+      <origin
+        xyz="0 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="8.48586203925743E-25"
+        ixz="-4.74413930693304E-22"
+        iyy="8.33333333333335E-08"
+        iyz="-1.53165970987907E-23"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra7_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra7_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra7_joint"
+    type="fixed">
+    <origin
+      xyz="-0.00325795589515732 0.01 0.0787365912414392"
+      rpy="0 -1.56283334013928 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra7_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra6_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="-4.98962822639576E-25"
+        ixz="-3.39144051146741E-23"
+        iyy="8.33333333333335E-08"
+        iyz="-4.71747040957049E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra6_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0592281897648251 0.0100000000000002 0.0514965541721973"
+      rpy="3.14159265358979 -0.77 3.14159265358979" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra6_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra5_link">
+    <inertial>
+      <origin
+        xyz="0 0.005 2.16840434497101E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333334E-08"
+        ixy="4.41162993361619E-24"
+        ixz="-3.16699266231279E-22"
+        iyy="8.33333333333334E-08"
+        iyz="6.50521303491304E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra5_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0797771249376778 0.01 0.00180960352729891"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra4_link">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333336E-08"
+        ixy="2.67056933078134E-24"
+        ixz="3.97046694025453E-23"
+        iyy="8.33333333333336E-08"
+        iyz="-3.6806172087867E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0616920200275471 0.01 -0.0496041607648557"
+      rpy="3.14159265358979 0.76 3.14159265358979" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra3_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.005 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="2.22124716756532E-24"
+        ixz="-2.64180808134123E-23"
+        iyy="8.33333333333335E-08"
+        iyz="-2.19081631978254E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra3_joint"
+    type="fixed">
+    <origin
+      xyz="0.00027198687362272 0.01 -0.0812381037591473"
+      rpy="0 1.56206968053494 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra2_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333334E-08"
+        ixy="2.19930418994969E-24"
+        ixz="1.32348898008484E-23"
+        iyy="8.33333333333334E-08"
+        iyz="2.71243884730729E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra2_joint"
+    type="fixed">
+    <origin
+      xyz="0.0549590536454422 0.01 -0.0600475135053598"
+      rpy="0 0.776671517137479 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.00499999999999998 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="4.00377249636385E-26"
+        ixz="5.76441489372891E-24"
+        iyy="8.33333333333334E-08"
+        iyz="1.88852733983969E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.0605128264132998 0.0740282391432658 0.00512397322163727"
+      rpy="-1.57 0.00414933997091996 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ultra_Link">
+    <inertial>
+      <origin
+        xyz="1.73472347597681E-18 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="8.33333333333335E-08"
+        ixy="9.30578189122156E-25"
+        ixz="1.27008645303574E-24"
+        iyy="8.33333333333335E-08"
+        iyz="4.86778005319435E-24"
+        izz="3.33333333333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_mod/meshes/ultra_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ultra_joint"
+    type="fixed">
+    <origin
+      xyz="-0.000972772813565568 0.02 0.0103617340165359"
+      rpy="-1.5707963267949 0.00648425728454263 0" />
+    <parent
+      link="tarelka_Link" />
+    <child
+      link="ultra_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
